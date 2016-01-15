@@ -1,5 +1,16 @@
 <!DOCTYPE HTML>
 
 <body> 
-Test Page
+<a href="/auth">login</a>
+
+    <% if (user != undefined) { %>
+        <p> Welcome <%= user.displayName %>. </p>
+        displayName: <p> <input type="text" value="<%= user.displayName %>" ></p>   
+        steamID: <p> <input type="text" value="<%= user.steamID %>" ></p>   
+        Role: <p> <input type="text" value="<%= user.role %>" ></p>     
+        Made At:<p> <input type="text" value="<%= user.createdAt %>" ></p>  
+        <p> <input type="text" value="<%= user.lastLoginAt %>" ></p>                               
+    <% } %>
+
+
 </body>

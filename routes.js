@@ -1,8 +1,3 @@
-/* Index */
-var index = function (req,res) {
-    console.log(req.user || 'no user');
-    res.render('profile/test.ejs');
-};
 /* On initial load, we get redirected to this page. 
    This is necessary for the first database page load.
    We redirect to this page to handle the function, but
@@ -11,12 +6,16 @@ var index = function (req,res) {
 var databaseSetup = function (req,res) {
     res.redirect('/');
 };
+
+/* Index */
+var index = function (req,res) {
+    user = req.user;
+    res.render('profile/test.ejs');
+};
 /* Redirect to Index */
 var redirToIndex = function (req,res) {
     res.redirect('/');
 };
-
-
 
 
 module.exports = {
