@@ -1,0 +1,20 @@
+{
+  "name": "payload",
+  "version": "0.0.1",
+  "description": "A simple messageboard system based around the Steam community",
+  "main": "app.js",
+  "dependencies": {
+    "bookshelf": "^0.9.1",
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "knex": "^0.9.0",
+    "mysql": "^2.10.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Matthew \"Gamemaster\" Stanley",
+  "license": "ISC"
+}
