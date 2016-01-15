@@ -4,11 +4,16 @@
   "description": "A simple messageboard system based around the Steam community",
   "main": "app.js",
   "dependencies": {
+    "body-parser": "^1.14.2",
     "bookshelf": "^0.9.1",
+    "cookie-parser": "^1.4.1",
     "ejs": "^2.3.4",
     "express": "^4.13.3",
+    "express-session": "^1.13.0",
     "knex": "^0.9.0",
-    "mysql": "^2.10.2"
+    "mysql": "^2.10.2",
+    "passport": "^0.3.2",
+    "passport-steam": "^0.1.6"
   },
   "devDependencies": {},
   "scripts": {
