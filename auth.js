@@ -1,5 +1,6 @@
 /* 	auth.js                        *
 *   all routes prefixed with /auth */
+var routes = require('./routes.js');
 
 /* Dependencies */
 var express = require('express');
@@ -8,8 +9,6 @@ var express = require('express');
 var auth = express();
 
 /* Routing */
-auth.get('/', function (req,res) {
-	res.send('Login page');
-});
+auth.get('/', routes.authTest);
 
 module.exports = auth;

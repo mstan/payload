@@ -1,6 +1,7 @@
 /* Routers & Configs */
 var auth = require('./auth.js'), //Routing to auth
 	configFile = require('./config.js'); //Base configs
+    routes = require('./routes.js');
 
 /* Dependencies */
 var express = require('express'),
@@ -25,9 +26,8 @@ app.use(express.static('views')); //Mapping public views dir
 app.use('/auth', auth); //Reroute all /auth routes to /auth handler
 
 /* Internal Routing */
-app.get('/', function (req,res) {
-    res.render('profile/test.ejs');
-});
+app.get('/', routes.index);
+app.get('/databaseSetup', routes.databaseSetup);
 
 /* Finalize and binding */
 app.listen(3000);
