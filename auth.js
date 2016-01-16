@@ -13,4 +13,6 @@ var auth = express();
 auth.get('/', passportLib.passportAuth, routes.redirToIndex);
 auth.get('/return', passportLib.passportAuth, routes.redirToIndex);
 
+/* Permission */
+
 module.exports = auth;

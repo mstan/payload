@@ -9,17 +9,24 @@ var databaseSetup = function (req,res) {
 
 /* Index */
 var index = function (req,res) {
-    user = req.user;
-    res.render('profile/test.ejs');
+    res.render('base/index.ejs');
 };
 /* Redirect to Index */
 var redirToIndex = function (req,res) {
     res.redirect('/');
 };
 
+/* Profile */
+var myProfile = function(req,res) {
+  user = req.user;
+  res.render('profile/profile.ejs');
+};
+
+
 
 module.exports = {
     index: index,
     databaseSetup: databaseSetup,
-    redirToIndex: redirToIndex
+    redirToIndex: redirToIndex,
+    myProfile: myProfile
 }

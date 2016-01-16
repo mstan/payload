@@ -32,13 +32,15 @@ app.use(session({secret: config.sessionToken, resave: true, saveUninitialized: t
 app.use(cookieParser(config.cookieParserToken));
 app.use(passport.initialize());
 app.use(passport.session());
-
+app.use(midWare.passAuthedUser);
 /* External Routing */
 app.use('/auth', auth); //Reroute all /auth routes to /auth handler
 
 /* Internal Routing */
 app.get('/', routes.index);
 app.get('/databaseSetup', routes.databaseSetup);
+
+app.get('/myProfile', midWare.isUserAuthenticated, routes.myProfile);
 
 /* Finalize and binding */
 app.listen(3000);
