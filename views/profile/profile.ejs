@@ -5,6 +5,9 @@
 
     <% if (user != undefined) { %>
         <p> Welcome <%= user.displayName %>. </p>
+
+
+        <p> <img src="<%= user.avatarFull %>"> </p>
         displayName: <p> <input type="text" value="<%= user.displayName %>" ></p>   
         steamID: <p> <input type="text" value="<%= user.steamID %>" ></p>   
         Role: <p> <input type="text" value="<%= user.role %>" ></p>     
