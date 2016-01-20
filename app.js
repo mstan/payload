@@ -26,13 +26,13 @@ app.use(midWare.dbSetup); //Middleware for Database setup.
 app.set('view engine', 'ejs'); //View Engine
 app.use(express.static('views')); //Mapping public views dir
 
-/* auth middleware */
-
+/* Auth Middleware */
 app.use(session({secret: config.sessionToken, resave: true, saveUninitialized: true}));
 app.use(cookieParser(config.cookieParserToken));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(midWare.passAuthedUser);
+
 /* External Routing */
 app.use('/auth', auth); //Reroute all /auth routes to /auth handler
 
@@ -45,3 +45,7 @@ app.get('/myProfile', midWare.isUserAuthenticated, routes.myProfile);
 /* Finalize and binding */
 app.listen(3000);
 console.log('Listening on port 3000');
+
+/* Routines */
+
+setInterval(midWare.updateUsers, config.updateUsersInterval);
