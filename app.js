@@ -40,7 +40,6 @@ app.use('/auth', auth); //Reroute all /auth routes to /auth handler
 app.get('/', routes.index);
 app.get('/databaseSetup', routes.databaseSetup);
 
-app.get('/myProfile', midWare.isUserAuthenticated, routes.myProfile);
 
 /* Finalize and binding */
 app.listen(3000);
